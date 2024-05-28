@@ -185,6 +185,19 @@ total_number_babies_23
 # 2022 had the bigger baby-boom!
 ```
 
+### D.)
+
+```{r}
+# Adding variable for year
+name_data_22 <- name_data_22|>
+  mutate(Year = 2022)
+name_data_23 <- name_data_23|>
+  mutate(Year = 2023)
+
+name_data_22
+name_data_23
+```
+
 ## Exercise 4: Open Analysis (4 points)
 
 This exercise is a bit more open-ended. You can choose any dataset from
