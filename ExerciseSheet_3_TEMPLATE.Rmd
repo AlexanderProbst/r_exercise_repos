@@ -206,6 +206,18 @@ combined_name_data <- bind_rows(name_data_22, name_data_23,id=NULL)
 combined_name_data
 ```
 
+### F.)
+
+```{r}
+#Combining counts of same names
+most_popular <- combined_name_data|>
+  group_by(Vorname)|>
+  summarise(total_count = sum(Anzahl))|>
+  arrange(desc(total_count))
+
+head(most_popular, 10)
+```
+
 ## Exercise 4: Open Analysis (4 points)
 
 This exercise is a bit more open-ended. You can choose any dataset from
