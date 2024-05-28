@@ -198,6 +198,14 @@ name_data_22
 name_data_23
 ```
 
+## E.)
+
+```{r}
+combined_name_data <- bind_rows(name_data_22, name_data_23,id=NULL)
+
+combined_name_data
+```
+
 ## Exercise 4: Open Analysis (4 points)
 
 This exercise is a bit more open-ended. You can choose any dataset from
