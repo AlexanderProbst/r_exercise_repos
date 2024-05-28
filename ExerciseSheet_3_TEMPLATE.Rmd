@@ -118,9 +118,9 @@ f)  Combine the counts for same names to determine the most popular
     names across both years. Print out the top 10 names in a nicely
     formatted table for both years. Include a table caption.
 
-### Answers exercise 3:
+## Answers exercise 3:
 
-#### B.)
+### B.)
 
 ```{r}
 library(tidyverse)
@@ -138,14 +138,14 @@ name_data_22
 name_data_23
 ```
 
-### Checking counting Variable
+#### Checking counting Variable
 
 ```{r}
 mode(name_data_22$Anzahl)
 mode(name_data_23$Anzahl)
 ```
 
-### Fixing the problem
+#### Fixing the problem
 
 The problem has been solved by using the arithmetic mean of the values
 1-4 (2) as a replacement for the "4 oder weniger" values.
@@ -156,14 +156,33 @@ While inprecise in some cases, the smallest deviation of the true values
 is achieved through this.
 
 ```{r}
+# changing variable content to arithmetic mean
 name_data_22 <- name_data_22|>
   mutate(Anzahl = ifelse(Anzahl == "4 oder weniger", 2, Anzahl))
 
 name_data_23 <- name_data_23|>
   mutate(Anzahl = ifelse(Anzahl == "4 oder weniger", 2, Anzahl))
 
+# Changing variable type
+name_data_22$Anzahl <- as.numeric(name_data_22$Anzahl)
+name_data_23$Anzahl <- as.numeric(name_data_23$Anzahl)
+
+#displaying fixed data frames
 name_data_22
 name_data_23
+```
+
+### C.)
+
+#### Calculating number of babies
+
+```{r}
+total_number_babies_22 <- sum(name_data_22$Anzahl, na.rm = T)
+total_number_babies_23 <- sum(name_data_23$Anzahl, na.rm = T)
+
+total_number_babies_22
+total_number_babies_23
+# 2022 had the bigger baby-boom!
 ```
 
 ## Exercise 4: Open Analysis (4 points)
