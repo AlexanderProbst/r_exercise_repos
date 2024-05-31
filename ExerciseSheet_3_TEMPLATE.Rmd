@@ -242,6 +242,21 @@ f)  Create a meaningful plot / figure with the dataset. Make sure to
     provide a figure caption (via the chunk options / Rmarkdown) and
     correctly label the figure.
 
+## Answers Exercise 4:
+
+### B.)
+
+```{r}
+
+library(tidyverse)
+library(readr)
+shark_data <- read.csv("Data/Shark attacks and fatalities - Global Shark Attack File (GSAF) (2018).csv")
+
+shark_data
+```
+
+### C.)
+
 ## Final Note
 
 Make sure to push all your commits and changes to GitHub before
